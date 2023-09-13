@@ -10,10 +10,10 @@ class Page1 extends StatelessWidget {
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            color: Colors.orange,
+            color: Color(0xFF232d3b),
           ),
           child: Center(
-            child: Text("플러터 공부"),
+            child: Image.asset('assets/logo.png'),
           ),
         ),
       ),
