@@ -45,5 +45,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSAllowsLocalNetworking</key>
+	<true/>
+	<key>NSAllowsArbitraryLoadsInWebContent</key>
+	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>음악을 재생하는 권한이 필요합니다.</string>
 </dict>
 </plist>
