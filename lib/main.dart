@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:til_flutter/pages/1day.dart';
+import 'package:til_flutter/screen/1day.dart';
+import 'package:til_flutter/screen/blog_web_app.dart';
 
 void main() {
-  runApp(Page1());
+  runApp(MaterialApp(home: HomeScreen()));
 }
