@@ -17,7 +17,7 @@ class Page1 extends StatelessWidget {
               children: [
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Image.asset(
-                    'assets/logo.png',
+                    'asset/logo.png',
                     width: 200,
                   ),
                   CircularProgressIndicator(
