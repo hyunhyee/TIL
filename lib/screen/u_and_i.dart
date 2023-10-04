@@ -25,7 +25,24 @@ class _DDay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('hihi');
+    return Column(
+      children: [
+        const SizedBox(height: 16),
+        Text('U&I'),
+        SizedBox(height: 16),
+        Text('우리 처음 만난 날'),
+        Text('2022.10.21'),
+        const SizedBox(height: 16),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.favorite),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        Text('D+365')
+      ],
+    );
   }
 }
 
