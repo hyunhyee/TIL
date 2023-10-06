@@ -1,8 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen4 extends StatelessWidget {
+class HomeScreen4 extends StatefulWidget {
   const HomeScreen4({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen4> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen4> {
+  DateTime firstDay = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +21,21 @@ class HomeScreen4 extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [_DDay(), _CoupleImage()],
+            children: [_DDay(onHeartPressed: changeFirstDay), _CoupleImage()],
           ),
         ));
+  }
+
+  void changeFirstDay() {
+    print('click the heart');
   }
 }
 
 class _DDay extends StatelessWidget {
-  const _DDay({Key? key}) : super(key: key);
+//  const _DDay({Key? key}) : super(key: key);
+  final GestureTapCallback onHeartPressed;
+
+  _DDay({required this.onHeartPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +59,8 @@ class _DDay extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         IconButton(
-          onPressed: () {},
+          iconSize: 60,
+          onPressed: onHeartPressed,
           icon: Icon(
             Icons.favorite,
             color: Colors.red,
