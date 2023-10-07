@@ -21,7 +21,10 @@ class _HomeScreenState extends State<HomeScreen4> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [_DDay(onHeartPressed: changeFirstDay), _CoupleImage()],
+            children: [
+              _DDay(onHeartPressed: changeFirstDay, firstDay: firstDay),
+              _CoupleImage()
+            ],
           ),
         ));
   }
@@ -34,12 +37,14 @@ class _HomeScreenState extends State<HomeScreen4> {
 class _DDay extends StatelessWidget {
 //  const _DDay({Key? key}) : super(key: key);
   final GestureTapCallback onHeartPressed;
+  final DateTime firstDay;
 
-  _DDay({required this.onHeartPressed});
+  _DDay({required this.onHeartPressed, required this.firstDay});
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final now = DateTime.now();
 
     return Column(
       children: [
@@ -54,7 +59,7 @@ class _DDay extends StatelessWidget {
           style: textTheme.bodyLarge,
         ),
         Text(
-          '2022.10.21',
+          '${firstDay.year}.${firstDay.month}.${firstDay.day}',
           style: textTheme.bodyMedium,
         ),
         const SizedBox(height: 16),
@@ -70,7 +75,7 @@ class _DDay extends StatelessWidget {
           height: 16,
         ),
         Text(
-          'D+365',
+          'D+${DateTime(now.year, now.month, now.day).difference(firstDay).inDays + 1}',
           style: textTheme.displayMedium,
         )
       ],
