@@ -30,7 +30,9 @@ class _HomeScreenState extends State<HomeScreen4> {
   }
 
   void changeFirstDay() {
-    print('click the heart');
+    setState(() {
+      firstDay = firstDay.subtract(Duration(days: 1));
+    });
   }
 }
 
