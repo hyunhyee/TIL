@@ -22,14 +22,23 @@ class _HomeScreenState extends State<HomeScreen4> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _DDay(onHeartPressed: changeFirstDay, firstDay: firstDay),
+              _DDay(onHeartPressed: onHeartPressed, firstDay: firstDay),
               _CoupleImage()
             ],
           ),
         ));
   }
 
-  void changeFirstDay() {
+  void onHeartPressed() {
+    showCupertinoDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return CupertinoDatePicker(
+            onDateTimeChanged: (DateTime date) {},
+            mode: CupertinoDatePickerMode.date,
+          );
+        });
+
     setState(() {
       firstDay = firstDay.subtract(Duration(days: 1));
     });
