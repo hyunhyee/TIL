@@ -31,13 +31,25 @@ class _HomeScreenState extends State<HomeScreen4> {
 
   void onHeartPressed() {
     showCupertinoDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return CupertinoDatePicker(
-            onDateTimeChanged: (DateTime date) {},
-            mode: CupertinoDatePickerMode.date,
-          );
-        });
+      context: context,
+      builder: (BuildContext context) {
+        return Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            color: Colors.white,
+            height: 300,
+            child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.date,
+                onDateTimeChanged: (DateTime date) {
+                  setState(() {
+                    firstDay = date;
+                  });
+                }),
+          ),
+        );
+      },
+      barrierDismissible: true,
+    );
 
     setState(() {
       firstDay = firstDay.subtract(Duration(days: 1));
