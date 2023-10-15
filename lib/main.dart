@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:til_flutter/const/colors.dart';
 import 'package:til_flutter/screen/day1.dart';
 import 'package:til_flutter/screen/blog_web_app.dart';
 import 'package:til_flutter/screen/image_carousel.dart';
@@ -9,21 +10,16 @@ void main() {
   runApp(
     MaterialApp(
       theme: ThemeData(
-          fontFamily: 'sunflower',
-          textTheme: TextTheme(
-            displayLarge: TextStyle(
-              color: Colors.white,
-              fontSize: 80.0,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'parisienne',
-            ),
-            displayMedium: TextStyle(
-                color: Colors.white, fontSize: 50, fontWeight: FontWeight.w700),
-            bodyLarge: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-            ),
-            bodyMedium: TextStyle(color: Colors.white, fontSize: 20),
+          scaffoldBackgroundColor: backgroundColor,
+          sliderTheme: SliderThemeData(
+            thumbColor: primaryColor,
+            activeTrackColor: primaryColor,
+            inactiveTrackColor: primaryColor.withOpacity(0.3),
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            selectedItemColor: primaryColor,
+            unselectedItemColor: secondaryColor,
+            backgroundColor: backgroundColor,
           )),
       home: HomeScreen5(),
     ),
