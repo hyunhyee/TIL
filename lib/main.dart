@@ -4,6 +4,7 @@ import 'package:til_flutter/screen/day1.dart';
 import 'package:til_flutter/screen/blog_web_app.dart';
 import 'package:til_flutter/screen/image_carousel.dart';
 import 'package:til_flutter/screen/random_dice.dart';
+import 'package:til_flutter/screen/root_screen.dart';
 import 'package:til_flutter/screen/u_and_i.dart';
 
 void main() {
@@ -21,7 +22,7 @@ void main() {
             unselectedItemColor: secondaryColor,
             backgroundColor: backgroundColor,
           )),
-      home: HomeScreen5(),
+      home: RootScreen(),
     ),
   );
 }

@@ -16,7 +16,6 @@ class HomeScreen3 extends StatelessWidget {
       if (nextPage == null) {
         return;
       }
-
       if (nextPage == 2) {
         nextPage = 0;
       } else {
