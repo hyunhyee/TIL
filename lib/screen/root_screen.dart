@@ -15,8 +15,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
-    controller = TabController(length: 2, vsync: this);
+    controller = TabController(length: 2, vsync: this); //상태 유지
   }
 
   @override
@@ -35,6 +34,15 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   }
 
   BottomNavigationBar renderBottomNavigation() {
-    return BottomNavigationBar(items: []);
+    return BottomNavigationBar(items: [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.edgesensor_high_outlined),
+        label: '주사위',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
+        label: '설정',
+      ),
+    ]);
   }
 }
