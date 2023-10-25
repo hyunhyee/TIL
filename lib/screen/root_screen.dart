@@ -16,6 +16,18 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = TabController(length: 2, vsync: this); //상태 유지
+
+    controller!.addListener(tabListener);
+  }
+
+  tabListener() {
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    controller!.removeListener(tabListener);
+    super.dispose();
   }
 
   @override
