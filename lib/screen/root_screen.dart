@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:til_flutter/screen/random_dice.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -45,14 +46,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
 
   List<Widget> renderChildren() {
     return [
-      Container(
-        child: Center(
-          child: Text('Tab 1',
-              style: TextStyle(
-                color: Colors.white,
-              )),
-        ),
-      ),
+      HomeScreen5(number: 1),
       Container(
         child: Center(
           child: Text('Tab 2',
