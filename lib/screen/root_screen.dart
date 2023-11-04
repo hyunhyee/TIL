@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:til_flutter/screen/random_dice.dart';
+import 'package:til_flutter/screen/settings_screen.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -12,6 +12,8 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   TabController? controller;
+
+  double threshold = 2.7;
 
   @override
   void initState() {
@@ -47,15 +49,14 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   List<Widget> renderChildren() {
     return [
       HomeScreen5(number: 1),
-      Container(
-        child: Center(
-          child: Text('Tab 2',
-              style: TextStyle(
-                color: Colors.white,
-              )),
-        ),
-      )
+      SettingsScreen(threshold: threshold, onThresholdChange: onThresholdChange)
     ];
+  }
+
+  void onThresholdChange(double val) {
+    setState(() {
+      threshold = val;
+    });
   }
 
   BottomNavigationBar renderBottomNavigation() {
