@@ -6,6 +6,7 @@ import 'package:til_flutter/screen/image_carousel.dart';
 import 'package:til_flutter/screen/random_dice.dart';
 import 'package:til_flutter/screen/root_screen.dart';
 import 'package:til_flutter/screen/u_and_i.dart';
+import 'package:til_flutter/screen/vid_player_screen.dart';
 
 void main() {
   runApp(
@@ -22,7 +23,7 @@ void main() {
             unselectedItemColor: secondaryColor,
             backgroundColor: backgroundColor,
           )),
-      home: RootScreen(),
+      home: VidPlayScreen(),
     ),
   );
 }
