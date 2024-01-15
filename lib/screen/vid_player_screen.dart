@@ -15,6 +15,7 @@ class _VidPlayScreenState extends State<VidPlayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Text('Home Screen'),
     );
   }
