@@ -16,7 +16,7 @@ class _VidPlayScreenState extends State<VidPlayScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Text('Home Screen'),
+      body: video == null ? renderEmpty() : renderVideo(),
     );
   }
 }
