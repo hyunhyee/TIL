@@ -19,4 +19,12 @@ class _VidPlayScreenState extends State<VidPlayScreen> {
       body: video == null ? renderEmpty() : renderVideo(),
     );
   }
+
+  Widget renderEmpty() {
+    return Container();
+  }
+
+  Widget renderVideo() {
+    return Container();
+  }
 }
