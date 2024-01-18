@@ -21,10 +21,38 @@ class _VidPlayScreenState extends State<VidPlayScreen> {
   }
 
   Widget renderEmpty() {
-    return Container();
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _Logo(),
+          SizedBox(height: 30.0),
+          _AppName(),
+        ],
+      ),
+    );
   }
 
   Widget renderVideo() {
+    return Container();
+  }
+}
+
+class _Logo extends StatelessWidget {
+  const _Logo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset('asset/img/logo.png');
+  }
+}
+
+class _AppName extends StatelessWidget {
+  const _AppName({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Container();
   }
 }
