@@ -53,6 +53,26 @@ class _AppName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final textStyle = TextStyle(
+      color: Colors.white,
+      fontSize: 30,
+      fontWeight: FontWeight.w300,
+    );
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'VIDEO',
+          style: textStyle,
+        ),
+        Text(
+          'PLAYER',
+          style: textStyle.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
+        )
+      ],
+    );
   }
 }
